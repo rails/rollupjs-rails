@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+VERSION=$1
+
+printf "module Rollup\n  VERSION = \"$VERSION\"\nend\n" > ./lib/rollup/version.rb
+bundle
+git add Gemfile.lock lib/rollup/version.rb
+git commit -m "Bump version for $VERSION"
+git push
+git tag v$VERSION
+git push --tags
+gem build rollupjs-rails.gemspec
+gem push "rollupjs-rails-$VERSION.gem" --host https://rubygems.org
+rm "rollupjs-rails-$VERSION.gem"
