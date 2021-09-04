@@ -24,7 +24,7 @@ Or, in Rails 7+, you can preconfigure your new application to use rollup.js with
 
 ## The sister gem to esbuild-rails
 
-This gem is almost identical in setup and purpose as [`esbuild-rails`](https://github.com/rails/esbuild-rails), which follows the same conventions, but uses [esbuild](https://esbuild.github.io) instead.
+This gem is almost identical in setup and purpose to [`esbuild-rails`](https://github.com/rails/esbuild-rails), which follows the same conventions, but uses [esbuild](https://esbuild.github.io) instead.
 
 
 ## License
