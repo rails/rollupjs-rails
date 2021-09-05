@@ -6,3 +6,4 @@ namespace :rollup do
 end
 
 Rake::Task["assets:precompile"].enhance(["rollup:compile"])
+Rake::Task["test:prepare"].enhance(["rollup:compile"])

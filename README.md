@@ -6,6 +6,8 @@ You develop using this approach by running rollup.js in watch mode in a terminal
 
 When you deploy your application to production, rollup.js attaches to the `assets:precompile` task to ensure that all your package dependencies from `package.json` have been installed via npm, and then runs `yarn build` to process `app/javascript/application.js` into `app/assets/builds/javascript.js`. The latter file is then picked up by the asset pipeline, digested, and copied into public/assets, as any other asset pipeline file.
 
+This also happens in testing where rollup attaches to the `test:prepare` task to ensure the JavaScript has been compiled before testing commences. (Note that this currently only applies to rails `test:*` tasks (like `test:all` or `test:controllers`), not "rails test", as that doesn't load `test:prepare`).
+
 That's it!
 
 You can tailor the configuration of rollup.js through the `rollup.config.js` that's created in the root of your project by the installer.
